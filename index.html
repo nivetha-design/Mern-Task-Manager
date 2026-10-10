@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskNest - To Do Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- Header -->
+        <div class="header">
+
+            <div>
+                <p class="hello">WELCOME BACK 👋</p>
+                <h1>Task<span>Nest</span></h1>
+                <p class="subtitle">
+                    Your simple space to organize everything.
+                </p>
+            </div>
+
+            <div class="date-card">
+                <p id="day">Monday</p>
+                <h3 id="date">01 Jan 2026</h3>
+            </div>
+
+        </div>
+
+
+        <!-- Add Task -->
+        <div class="add-task">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What do you need to do?"
+            >
+
+            <button onclick="addTask()">Add Task</button>
+
+        </div>
+
+
+        <!-- Statistics -->
+        <div class="stats">
+
+            <div class="stat-card">
+                <div class="icon purple">📋</div>
+
+                <div>
+                    <p>Total Tasks</p>
+                    <h2 id="total">0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="icon green">✓</div>
+
+                <div>
+                    <p>Completed</p>
+                    <h2 id="completed">0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="icon orange">⏳</div>
+
+                <div>
+                    <p>Pending</p>
+                    <h2 id="pending">0</h2>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Progress -->
+        <div class="progress-card">
+
+            <div class="progress-top">
+
+                <div>
+                    <p>Daily Progress</p>
+                    <h2 id="percentage">0%</h2>
+                </div>
+
+                <div class="target">
+                    🎯
+                </div>
+
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+
+            <p id="message">
+                Start your day by adding a task.
+            </p>
+
+        </div>
+
+
+        <!-- Task Section -->
+        <div class="task-box">
+
+            <div class="task-heading">
+
+                <div>
+                    <h2>My Tasks</h2>
+                    <p>Keep your day organized.</p>
+                </div>
+
+                <div class="filters">
+
+                    <button
+                        id="allBtn"
+                        class="active"
+                        onclick="showAll()">
+                        All
+                    </button>
+
+                    <button
+                        id="pendingBtn"
+                        onclick="showPending()">
+                        Pending
+                    </button>
+
+                    <button
+                        id="doneBtn"
+                        onclick="showCompleted()">
+                        Done
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tasks appear here -->
+            <div id="taskList"></div>
+
+
+            <!-- Empty Message -->
+            <div id="emptyMessage" class="empty">
+
+                <div class="empty-icon">
+                    ✨
+                </div>
+
+                <h3>No tasks yet</h3>
+
+                <p>
+                    Add your first task and start being productive.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>TaskNest • Plan better. Do better. ✨</p>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
